@@ -23,6 +23,7 @@ public class StudentService {
 
     public Student findStudent(long Id) {
         return studentRepository.getById(Id);
+
     }
 
     public Student updateStudent(Student student) {

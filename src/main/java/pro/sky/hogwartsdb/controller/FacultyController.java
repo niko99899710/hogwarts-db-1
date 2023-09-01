@@ -4,16 +4,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pro.sky.hogwartsdb.model.Faculty;
 import pro.sky.hogwartsdb.service.FacultyService;
-
 import java.util.Collection;
-import java.util.Collections;
+
 @RestController
 @RequestMapping("faculty")
 public class FacultyController {
 
     public final FacultyService facultyService;
 
+
     public FacultyController(FacultyService facultyService) {
+
         this.facultyService = facultyService;
     }
 

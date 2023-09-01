@@ -2,12 +2,9 @@ package pro.sky.hogwartsdb.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pro.sky.hogwartsdb.model.Faculty;
 import pro.sky.hogwartsdb.model.Student;
 import pro.sky.hogwartsdb.service.StudentService;
-
 import java.util.Collection;
-import java.util.Collections;
 
 @RestController
 @RequestMapping("student")

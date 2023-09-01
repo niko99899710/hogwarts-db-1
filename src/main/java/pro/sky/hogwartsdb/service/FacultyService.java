@@ -32,12 +32,11 @@ import java.util.*;
             facultyRepository.deleteById(id);
         }
 
-
         public Collection<Faculty> findAllFaculty() {
             return facultyRepository.findAll();
         }
 
-
+///
 
     }
 
