@@ -36,7 +36,6 @@ import java.util.*;
             return facultyRepository.findAll();
         }
 
-///
 
     }
 
