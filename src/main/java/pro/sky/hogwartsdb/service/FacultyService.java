@@ -36,6 +36,10 @@ import java.util.*;
             return facultyRepository.findAll();
         }
 
+        public Collection<Faculty> findAllByColor(String color) {
+         return facultyRepository.findAllByColor(color);
+        }
+
 
     }
 
