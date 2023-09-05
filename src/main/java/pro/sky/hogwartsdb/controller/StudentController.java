@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import pro.sky.hogwartsdb.model.Student;
 import pro.sky.hogwartsdb.service.StudentService;
 import java.util.Collection;
-import java.util.Collections;
 
 @RestController
 @RequestMapping("student")
@@ -46,17 +45,24 @@ public class StudentController {
         return  ResponseEntity.ok().build();
     }
 
-    @GetMapping()
+    @GetMapping("All")
     public Collection<Student> findAllStudent() {
         return studentService.findAllStudent() ;
     }
 
     @GetMapping()
-    public ResponseEntity<Collection<Student>> findByAgeBetween(@RequestParam(required = false) int age) {
-        if (age > 0) {
-            return ResponseEntity.ok(studentService.findAge(age));
-        }
-        return ResponseEntity.ok(Collections.emptyList());
+    public Collection<Student> findAllByAgeStudent(@RequestParam int age) {
+        return studentService.findAllByAge(age) ;
     }
 
+    @GetMapping("age")
+    public ResponseEntity<Collection<Student>> findByAgeBetween(@RequestParam int age1, @RequestParam int age2, @RequestParam String namePart) {
+        if (age1 > 0 && age2 > age1) {
+            return ResponseEntity.ok(studentService.findByAgeBetween(age1, age2));
+        }
+        if (namePart != null && !namePart.isBlank()) {
+            return ResponseEntity.ok(studentService.findAllByNameContains(namePart));
+        }
+        return ResponseEntity.ok(studentService.findAllStudent());
+    }
 }

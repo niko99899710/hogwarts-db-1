@@ -49,7 +49,7 @@ public class FacultyController {
         return  ResponseEntity.ok().build();
     }
 
-    @GetMapping()
+    @GetMapping("all")
     public Collection<Faculty> findAllFaculty() {
         return facultyService.findAllFaculty() ;
     }

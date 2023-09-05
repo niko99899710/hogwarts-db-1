@@ -15,7 +15,7 @@ public class Faculty {
     private String color;
 
     @JsonIgnore
-    @OneToMany (mappedBy = "faculty_id")
+    @OneToMany (mappedBy = "faculty")
     private Set<Student> students;
 
     public Faculty (){}
