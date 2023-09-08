@@ -2,6 +2,7 @@ package pro.sky.hogwartsdb.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pro.sky.hogwartsdb.model.Faculty;
 import pro.sky.hogwartsdb.model.Student;
 import pro.sky.hogwartsdb.service.StudentService;
 import java.util.Collection;
@@ -48,6 +49,11 @@ public class StudentController {
     @GetMapping("All")
     public Collection<Student> findAllStudent() {
         return studentService.findAllStudent() ;
+    }
+
+    @GetMapping("faculties")
+    public Collection<Student> findAllStudentsByFaculty (@RequestParam Faculty faculty) {
+        return studentService.findAllStudentsByFaculty(faculty);
     }
 
     @GetMapping()

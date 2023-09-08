@@ -3,6 +3,7 @@ package pro.sky.hogwartsdb.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pro.sky.hogwartsdb.model.Faculty;
+import pro.sky.hogwartsdb.model.Student;
 import pro.sky.hogwartsdb.repository.FacultyRepository;
 
 import java.util.*;
@@ -39,6 +40,10 @@ import java.util.*;
         public Collection<Faculty> findAllByColor(String color) {
          return facultyRepository.findAllByColor(color);
         }
+
+        public Collection <Faculty>  findFacultyByStudents (Student students){
+            return facultyRepository.findFacultyByStudents(students);
+        };
 
 
     }

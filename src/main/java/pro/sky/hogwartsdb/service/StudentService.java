@@ -2,6 +2,7 @@ package pro.sky.hogwartsdb.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pro.sky.hogwartsdb.model.Faculty;
 import pro.sky.hogwartsdb.model.Student;
 import pro.sky.hogwartsdb.repository.StudentRepository;
 import java.util.Collection;
@@ -46,6 +47,10 @@ public class StudentService {
 
     public Collection <Student> findAllByNameContains (String part){
        return studentRepository.findAllByNameContains(part);
+    }
+
+    public Collection <Student> findAllStudentsByFaculty (Faculty faculty){
+        return studentRepository.findAllStudentsByFaculty(faculty);
     }
 
 
