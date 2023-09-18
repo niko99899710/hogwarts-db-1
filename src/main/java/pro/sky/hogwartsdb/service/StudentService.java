@@ -11,7 +11,7 @@ import java.util.Collection;
 public class StudentService {
    private final StudentRepository studentRepository;
 
-  // @Autowired
+   @Autowired
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
